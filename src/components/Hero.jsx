@@ -19,7 +19,7 @@ const Hero = () => {
     <section className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden">
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full p-2 px-20 flex justify-between items-center z-50">
-        <div className="text-20px font-bold">Rachel.design</div>
+        <div className="text-20px font-bold">Rachel.codes</div>
         <ul className="hidden md:flex space-x-8 text-20px font-medium">
           <li className="cursor-pointer hover:text-gray-300 transition-colors">
             About
