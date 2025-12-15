@@ -37,39 +37,24 @@ const projects = [
 ];
 
 const ProjectCard = ({ project, index }) => {
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    const card = cardRef.current;
-
-    // Pin the card when it reaches its designated position
-    ScrollTrigger.create({
-      trigger: card,
-      start: "top top",
-      end: "bottom bottom",
-      pin: true,
-      pinSpacing: false,
-    });
-  }, []);
-
   // Calculate the top position for this card's sticky header
-  // Each header is approximately 160px tall (adjust based on content)
-  const headerHeight = 160;
+  // Each header stacks below the previous one
+  const headerHeight = 160; // Approximate height of each header
   const topPosition = index * headerHeight;
 
   return (
     <div
-      ref={cardRef}
       className="project-card relative"
       style={{
-        minHeight: "100vh",
-        paddingTop: topPosition > 0 ? `${topPosition}px` : "0",
+        // Add padding-top to push this card down so its header
+        // sticks at the correct position without overlapping previous headers
+        paddingTop: index > 0 ? `${topPosition}px` : "0",
       }}
     >
       <div className="w-full max-w-6xl mx-auto px-6">
         {/* Header - Sticky positioned to stack */}
         <div
-          className="bg-black border-2 border-white rounded-t-3xl p-6 md:p-8 sticky z-50"
+          className="bg-black border-2 border-white rounded-t-3xl p-6 md:p-8 sticky"
           style={{
             top: `${topPosition}px`,
             zIndex: 100 - index,
@@ -96,7 +81,7 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Bento Image Layout - Scrolls under next card */}
-        <div className="bg-black border-2 border-white border-t-0 rounded-b-3xl p-6 md:p-8">
+        <div className="bg-black border-2 border-white border-t-0 rounded-b-3xl p-6 md:p-8 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Large Image - Left (Fixed size) */}
             <div className="md:col-span-2 h-[300px] md:h-[400px] rounded-2xl overflow-hidden">

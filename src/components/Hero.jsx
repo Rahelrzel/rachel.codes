@@ -56,10 +56,26 @@ const Hero = () => {
             />
           </div>
 
-          <div className="flex-shrink-0">
-            <button className="bg-white text-black px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition-colors">
-              Contact Me
-            </button>
+          {/* CV Buttons - Files in the public folder are served from the root URL path.
+              For example, /public/cv/Rachel_Zeleke_CV.pdf becomes accessible at /cv/Rachel_Zeleke_CV.pdf */}
+          <div className="flex-shrink-0 flex gap-4">
+            {/*         
+            <a
+              href="/cv/Rachel_Zeleke_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-200 transition-colors"
+            >
+              View CV
+            </a> */}
+
+            <a
+              href="/cv/Rachel_Zeleke_CV.pdf"
+              download="Rachel_Zeleke_CV.pdf"
+              className="bg-white border-2 border-white text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-black transition-colors"
+            >
+              Download CV
+            </a>
           </div>
         </div>
       </div>

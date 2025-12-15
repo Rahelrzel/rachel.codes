@@ -129,10 +129,16 @@ const About = () => {
             responsive, scalable, and pixel-perfect interfaces.
           </p>
         </div>
+        {/* Contact Me Button - Opens default email client */}
         <div className="flex-shrink-0">
-          <button className="bg-white text-black px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition-colors my-15">
+          <a
+            href="mailto:rahelrzele@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-black px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition-colors my-15"
+          >
             Contact Me
-          </button>
+          </a>
         </div>
       </div>
     </section>
