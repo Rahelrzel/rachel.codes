@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaUserCircle } from "react-icons/fa";
-import SectionHeader from "./SectionHeader";
+import commenterImage from "../assets/Rahel photo .jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* -------------------- DATA -------------------- */
 const testimonials = [
   {
     name: "Alice Johnson",
@@ -33,75 +33,73 @@ const testimonials = [
   },
 ];
 
-const TestimonialCard = ({ data }) => (
-  <div className="bg-gray-100 p-6 rounded-xl w-80 md:w-96 flex-shrink-0 mx-4">
-    <div className="flex items-center mb-4">
-      <FaUserCircle className="text-4xl text-gray-400 mr-4" />
-      <div>
-        <h4 className="font-bold">{data.name}</h4>
+/* -------------------- CARD -------------------- */
+const TestimonialCard = ({ data }) => {
+  return (
+    <div
+      className="
+        border-2 border-white
+        p-8
+        rounded-2xl
+        w-[420px] md:w-[500px]
+        flex-shrink-0
+        bg-black
+      "
+    >
+      <div className="flex items-start gap-6">
+        {/* Image */}
+        <img
+          src={commenterImage}
+          alt={data.name}
+          className="
+            w-20 h-20 md:w-24 md:h-24
+            rounded-full
+            object-cover
+            border-2 border-white
+            flex-shrink-0
+          "
+        />
+
+        {/* Text */}
+        <div className="flex flex-col gap-3">
+          <h4 className="font-bold text-xl md:text-2xl text-white">
+            {data.name}
+          </h4>
+          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+            {data.comment}
+          </p>
+        </div>
       </div>
     </div>
-    <p className="text-gray-600">{data.comment}</p>
-  </div>
-);
+  );
+};
 
-const TestimonialRow = ({ items, direction = "left", speed = 1 }) => {
-  const rowRef = useRef(null);
-  const tlRef = useRef(null);
+/* -------------------- ROW -------------------- */
+const TestimonialRow = ({ items, direction = "left", duration = 30 }) => {
+  const contentRef = useRef(null);
 
   useEffect(() => {
-    const el = rowRef.current;
-    const content = el.querySelector(".testi-content");
+    const el = contentRef.current;
+    const totalWidth = el.scrollWidth / 2;
 
-    // Clone content for seamless loop
-    const clone = content.cloneNode(true);
-    el.appendChild(clone);
+    // Set starting position
+    gsap.set(el, {
+      x: direction === "left" ? 0 : -totalWidth,
+    });
 
-    const width = content.offsetWidth;
-
-    // Initial setup
-    gsap.set(el, { x: 0 });
-
-    // Create the loop animation
-    tlRef.current = gsap.to(el, {
-      x: direction === "left" ? -width : width,
-      duration: 30 / speed,
+    // Always animate in ONE direction
+    gsap.to(el, {
+      x: direction === "left" ? -totalWidth : 0,
+      duration,
       ease: "none",
       repeat: -1,
-      modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % width),
-      },
     });
-
-    // ScrollTrigger to reverse direction
-    ScrollTrigger.create({
-      trigger: document.body,
-      start: "top top",
-      end: "bottom bottom",
-      onUpdate: (self) => {
-        if (self.direction === -1) {
-          gsap.to(tlRef.current, {
-            timeScale: -1 * (direction === "left" ? 1 : -1),
-            overwrite: true,
-          });
-        } else {
-          gsap.to(tlRef.current, {
-            timeScale: 1 * (direction === "left" ? 1 : -1),
-            overwrite: true,
-          });
-        }
-      },
-    });
-
-    return () => {
-      if (tlRef.current) tlRef.current.kill();
-    };
-  }, [direction, speed]);
+  }, [direction, duration]);
 
   return (
-    <div className="overflow-hidden whitespace-nowrap py-4" ref={rowRef}>
-      <div className="testi-content inline-flex">
-        {items.map((item, index) => (
+    <div className="overflow-hidden">
+      <div ref={contentRef} className="flex w-max gap-6">
+        {[...items, ...items].map((item, index) => (
           <TestimonialCard key={index} data={item} />
         ))}
       </div>
@@ -109,17 +107,48 @@ const TestimonialRow = ({ items, direction = "left", speed = 1 }) => {
   );
 };
 
+/* -------------------- SECTION -------------------- */
 const Testimonials = () => {
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    // Animate Title from Stroke to Solid
+    gsap.fromTo(
+      titleRef.current,
+      {
+        color: "transparent",
+        webkitTextStroke: "1px white",
+      },
+      {
+        color: "white",
+        webkitTextStroke: "0px transparent",
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 mb-12">
-        <SectionHeader title="What Clients Are Saying" />
+    <section className="py-20 bg-black overflow-hidden">
+      {/* Section Title */}
+      <div className="container mx-auto px-4 pb-20">
+        <h2
+          ref={titleRef}
+          className="text-5xl md:text-8xl font-black text-center tracking-tighter"
+        >
+          WHAT CLIENTS ARE SAYING
+        </h2>
       </div>
 
-      <div className="space-y-8">
-        <TestimonialRow items={testimonials} direction="left" speed={1} />
-        <TestimonialRow items={testimonials} direction="right" speed={1} />
-        <TestimonialRow items={testimonials} direction="left" speed={1} />
+      <div className="space-y-10">
+        <TestimonialRow items={testimonials} direction="left" duration={35} />
+        <TestimonialRow items={testimonials} direction="right" duration={40} />
+        <TestimonialRow items={testimonials} direction="left" duration={45} />
       </div>
     </section>
   );
