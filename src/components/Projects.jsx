@@ -9,9 +9,9 @@ import p1_3 from "../assets/project1.3.png";
 import p2_1 from "../assets/project2.png";
 import p2_2 from "../assets/project2.2.png";
 import p2_3 from "../assets/project2.3.png";
-import p3_1 from "../assets/project3.png";
-import p3_2 from "../assets/project3.2.png";
-import p3_3 from "../assets/project3.3.png";
+import p3_1 from "../assets/Home.png";
+import p3_2 from "../assets/landing.png";
+import p3_3 from "../assets/subscription page.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
