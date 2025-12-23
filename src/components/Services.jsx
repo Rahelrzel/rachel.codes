@@ -75,29 +75,31 @@ const Services = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section ref={containerRef} className="py-12 md:py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
         <h2
           ref={titleRef}
-          className="text-5xl md:text-8xl font-black text-center mb-16 tracking-tighter"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-center mb-12 md:mb-16 tracking-tighter"
         >
           SERVICES
         </h2>
 
-        <div className="mt-12 space-y-12">
+        <div className="mt-8 md:mt-12 space-y-8 md:space-y-12">
           {services.map((service) => (
             <div
               key={service.id}
-              className="service-item flex flex-col md:flex-row items-start border-b border-gray-200 pb-8"
+              className="service-item flex flex-col md:flex-row items-start border-b border-gray-200 pb-6 md:pb-8"
             >
-              <span className="text-6xl md:text-8xl font-extrabold text-black mr-8 mb-4 md:mb-0">
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-black md:mr-8 mb-3 md:mb-0">
                 {service.id}
               </span>
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-lg">{service.desc}</p>
+                <p className="text-gray-600 text-base md:text-lg">
+                  {service.desc}
+                </p>
               </div>
             </div>
           ))}

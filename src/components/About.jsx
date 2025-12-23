@@ -82,38 +82,38 @@ const About = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-32 min-h-screen flex flex-col justify-center bg-black text-white overflow-hidden"
+      className="relative py-20 md:py-32 min-h-screen flex flex-col justify-center bg-black text-white overflow-hidden"
     >
-      {/* Decorative Vectors - Increased size */}
+      {/* Decorative Vectors - Responsive sizing */}
       <img
         ref={v1Ref}
         src={vector1}
         alt=""
-        className="absolute top-0 left-0 w-64 md:w-96"
+        className="absolute top-0 left-0 w-32 sm:w-48 md:w-64 lg:w-96"
       />
       <img
         ref={v2Ref}
         src={vector2}
         alt=""
-        className="absolute top-0 right-0 w-64 md:w-96"
+        className="absolute top-0 right-0 w-32 sm:w-48 md:w-64 lg:w-96"
       />
       <img
         ref={v3Ref}
         src={vector3}
         alt=""
-        className="absolute bottom-0 left-0 w-64 md:w-96"
+        className="absolute bottom-0 left-0 w-32 sm:w-48 md:w-64 lg:w-96"
       />
       <img
         ref={v4Ref}
         src={vector4}
         alt=""
-        className="absolute bottom-0 right-0 w-64 md:w-96"
+        className="absolute bottom-0 right-0 w-32 sm:w-48 md:w-64 lg:w-96"
       />
 
-      <div className="flex flex-col justify-center items-center container mx-auto px-4 relative z-10">
+      <div className="flex flex-col justify-center items-center container mx-auto px-4 md:px-8 relative z-10">
         <h2
           ref={titleRef}
-          className="text-5xl md:text-8xl font-black mb-12 text-center tracking-tighter"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 md:mb-12 text-center tracking-tighter"
         >
           ABOUT ME
         </h2>
@@ -121,9 +121,9 @@ const About = () => {
         <div className="max-w-3xl mx-auto text-center">
           <p
             ref={textRef}
-            className="text-xl md:text-2xl leading-relaxed text-white"
+            className="text-lg sm:text-xl md:text-2xl leading-relaxed text-white"
           >
-            I’m a frontend developer and UI/UX designer passionate about
+            I'm a frontend developer and UI/UX designer passionate about
             creating seamless digital experiences. I bridge the gap between
             design and development by turning user-focused designs into
             responsive, scalable, and pixel-perfect interfaces.
@@ -135,7 +135,7 @@ const About = () => {
             href="mailto:rahelrzele@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-black px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition-colors my-15"
+            className="inline-block bg-white text-black px-8 py-3 md:px-10 md:py-4 rounded-full text-lg md:text-xl font-bold hover:bg-gray-200 transition-colors mt-8 md:mt-12"
           >
             Contact Me
           </a>

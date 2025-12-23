@@ -39,20 +39,20 @@ const TestimonialCard = ({ data }) => {
     <div
       className="
         border-2 border-white
-        p-8
-        rounded-2xl
-        w-[420px] md:w-[500px]
+        p-4 sm:p-6 md:p-8
+        rounded-xl md:rounded-2xl
+        w-[280px] sm:w-[350px] md:w-[420px] lg:w-[500px]
         flex-shrink-0
         bg-black
       "
     >
-      <div className="flex items-start gap-6">
+      <div className="flex items-start gap-4 md:gap-6">
         {/* Image */}
         <img
           src={commenterImage}
           alt={data.name}
           className="
-            w-20 h-20 md:w-24 md:h-24
+            w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24
             rounded-full
             object-cover
             border-2 border-white
@@ -61,11 +61,11 @@ const TestimonialCard = ({ data }) => {
         />
 
         {/* Text */}
-        <div className="flex flex-col gap-3">
-          <h4 className="font-bold text-xl md:text-2xl text-white">
+        <div className="flex flex-col gap-2 md:gap-3">
+          <h4 className="font-bold text-lg sm:text-xl md:text-2xl text-white">
             {data.name}
           </h4>
-          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
             {data.comment}
           </p>
         </div>

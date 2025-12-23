@@ -125,18 +125,22 @@ const TechLoop = ({
   }, [direction, speed]);
 
   return (
-    <div className="overflow-hidden whitespace-nowrap py-4">
+    <div className="overflow-hidden whitespace-nowrap py-2 md:py-4">
       <div ref={rowRef} className="inline-block">
         <div className="tech-content inline-flex items-center">
           {items.map((item, index) => (
             <div
               key={index}
               className={`flex flex-col items-center justify-center mx-1 ${
-                item.image ? "w-80 h-50" : isLarge ? "w-80" : "w-24"
+                item.image
+                  ? "w-48 h-32 sm:w-60 sm:h-40 md:w-80 md:h-50"
+                  : isLarge
+                  ? "w-40 sm:w-60 md:w-80"
+                  : "w-16 sm:w-20 md:w-24"
               }`}
             >
               {item.image ? (
-                <div className="w-full h-full rounded-2xl overflow-hidden shadow-lg">
+                <div className="w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src={item.image}
                     alt={`Project ${index}`}
@@ -146,11 +150,17 @@ const TechLoop = ({
               ) : (
                 <>
                   <item.icon
-                    className={`${isLarge ? "text-8xl" : "text-4xl"} mb-2`}
+                    className={`${
+                      isLarge
+                        ? "text-4xl sm:text-6xl md:text-8xl"
+                        : "text-2xl sm:text-3xl md:text-4xl"
+                    } mb-1 md:mb-2`}
                   />
                   <span
                     className={`${
-                      isLarge ? "text-2xl" : "text-sm"
+                      isLarge
+                        ? "text-sm sm:text-lg md:text-2xl"
+                        : "text-xs sm:text-sm"
                     } font-medium`}
                   >
                     {item.name}
@@ -167,8 +177,8 @@ const TechLoop = ({
 
 const Technologies = () => {
   return (
-    <section className="py-20 bg-black text-white overflow-hidden">
-      <div className="mb-8">
+    <section className="py-12 md:py-20 bg-black text-white overflow-hidden">
+      <div className="mb-4 md:mb-8">
         <TechLoop items={techs} direction="left" speed={1} isLarge={true} />
       </div>
       <div>
