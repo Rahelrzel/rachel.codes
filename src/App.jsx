@@ -2,16 +2,10 @@ import React, { useEffect } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Routes, Route } from "react-router-dom";
 
-import Hero from "./components/Hero";
-import Technologies from "./components/Technologies";
-import About from "./components/About";
-import Services from "./components/Services";
-import Projects from "./components/Projects";
-import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-
+import Home from "./components/Home";
+import ProjectDetails from "./components/ProjectDetails";
 import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -54,14 +48,10 @@ function App() {
 
   return (
     <div className="App">
-      <Hero />
-      <Technologies />
-      <About />
-      <Services />
-      <Projects />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:id" element={<ProjectDetails />} />
+      </Routes>
     </div>
   );
 }

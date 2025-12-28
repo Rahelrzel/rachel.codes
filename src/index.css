@@ -11,6 +11,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-color: black;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
 html.lenis,
 html.lenis body {
   height: auto;

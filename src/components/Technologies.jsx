@@ -19,15 +19,15 @@ import {
   SiMongoose,
 } from "react-icons/si";
 import SectionHeader from "./SectionHeader";
-import project1 from "../assets/project1.png";
-import project1_2 from "../assets/project1.2.png";
-import project1_3 from "../assets/project1.3.png";
-import project2 from "../assets/project2.png";
-import project2_2 from "../assets/project2.2.png";
-import project2_3 from "../assets/project2.3.png";
-import project3 from "../assets/project3.png";
-import project3_2 from "../assets/project3.2.png";
-import project3_3 from "../assets/project3.3.png";
+import project1 from "../assets/project1(1).webp";
+import project12 from "../assets/project1(2).webp";
+import project13 from "../assets/project1(3).webp";
+import project2 from "../assets/project2(1).webp";
+import project22 from "../assets/project2(2).webp";
+import project23 from "../assets/project2(3).webp";
+import project3 from "../assets/project3(1).webp";
+import project32 from "../assets/project3(2).webp";
+import project33 from "../assets/project3(3).webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,14 +49,14 @@ const techs = [
 
 const images = [
   { image: project1 },
-  { image: project1_2 },
-  { image: project1_3 },
+  { image: project12 },
+  { image: project13 },
   { image: project2 },
-  { image: project2_2 },
-  { image: project2_3 },
+  { image: project22 },
+  { image: project23 },
   { image: project3 },
-  { image: project3_2 },
-  { image: project3_3 },
+  { image: project32 },
+  { image: project33 },
 ];
 
 const TechLoop = ({
