@@ -129,7 +129,7 @@ const Testimonials = () => {
           end: "top 50%",
           scrub: true,
         },
-      }
+      },
     );
   }, []);
 

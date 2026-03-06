@@ -49,7 +49,7 @@ const Services = () => {
             end: "top 60%",
             scrub: true,
           },
-        }
+        },
       );
     });
 
@@ -70,7 +70,7 @@ const Services = () => {
           end: "top 50%",
           scrub: true,
         },
-      }
+      },
     );
   }, []);
 

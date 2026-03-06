@@ -119,7 +119,7 @@ const Projects = () => {
           end: "top 50%",
           scrub: true,
         },
-      }
+      },
     );
   }, []);
 

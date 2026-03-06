@@ -37,25 +37,25 @@ const About = () => {
       v1Ref.current,
       { x: startOffset, y: startOffset },
       { x: endOffset, y: endOffset },
-      0
+      0,
     )
       .fromTo(
         v2Ref.current,
         { x: -startOffset, y: startOffset },
         { x: -endOffset, y: endOffset },
-        0
+        0,
       )
       .fromTo(
         v3Ref.current,
         { x: startOffset, y: -startOffset },
         { x: endOffset, y: -endOffset },
-        0
+        0,
       )
       .fromTo(
         v4Ref.current,
         { x: -startOffset, y: -startOffset },
         { x: -endOffset, y: -endOffset },
-        0
+        0,
       );
 
     // Animate Title from Stroke to Solid (matching Services/SectionHeader style)
@@ -75,7 +75,7 @@ const About = () => {
           end: "top 50%",
           scrub: true,
         },
-      }
+      },
     );
   }, []);
 

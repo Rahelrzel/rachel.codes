@@ -100,7 +100,7 @@ const TechLoop = ({
           duration: 20 / speed,
           ease: "none",
           repeat: -1,
-        }
+        },
       );
     } else {
       tlRef.current = gsap.fromTo(
@@ -111,7 +111,7 @@ const TechLoop = ({
           duration: 20 / speed,
           ease: "none",
           repeat: -1,
-        }
+        },
       );
     }
 
@@ -135,8 +135,8 @@ const TechLoop = ({
                 item.image
                   ? "w-48 h-32 sm:w-60 sm:h-40 md:w-80 md:h-50"
                   : isLarge
-                  ? "w-40 sm:w-60 md:w-80"
-                  : "w-16 sm:w-20 md:w-24"
+                    ? "w-40 sm:w-60 md:w-80"
+                    : "w-16 sm:w-20 md:w-24"
               }`}
             >
               {item.image ? (
