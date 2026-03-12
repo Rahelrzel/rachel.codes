@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import memoji from "../assets/memoji2.svg";
+import memoji from "../assets/avatar.svg";
 
 const Hero = () => {
   const memojiRef = useRef(null);
@@ -101,8 +101,8 @@ const Hero = () => {
             <img
               ref={memojiRef}
               src={memoji}
-              alt="Rachel's Memoji"
-              className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] object-contain"
+              alt="Rachel's Avatar"
+              className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]"
             />
           </div>
 

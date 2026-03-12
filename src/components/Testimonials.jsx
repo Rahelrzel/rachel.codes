@@ -9,25 +9,30 @@ gsap.registerPlugin(ScrollTrigger);
 const testimonials = [
   {
     name: "Alice Johnson",
+    role: "Product Manager at TechStart Inc.",
     comment:
       "Rachel is an amazing developer! She delivered the project on time and exceeded our expectations.",
   },
   {
     name: "Bob Smith",
+    role: "Founder at Creative Studio",
     comment:
       "The design was exactly what we wanted. Clean, modern, and user-friendly.",
   },
   {
     name: "Charlie Brown",
+    role: "CTO at Innovation Labs",
     comment: "Great communication and technical skills. Highly recommended!",
   },
   {
     name: "Diana Prince",
+    role: "Marketing Director at Wonder Corp",
     comment:
       "She transformed our vision into reality. The website is beautiful and fast.",
   },
   {
     name: "Ethan Hunt",
+    role: "Lead Designer at Mission Creative",
     comment:
       "Professional, creative, and detail-oriented. A pleasure to work with.",
   },
@@ -47,12 +52,12 @@ const TestimonialCard = ({ data }) => {
       "
     >
       <div className="flex items-start gap-4 md:gap-6">
-        {/* Image */}
+        {/* Smaller Image */}
         <img
           src={commenterImage}
           alt={data.name}
           className="
-            w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24
+            w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
             rounded-full
             object-cover
             border-2 border-white
@@ -61,10 +66,13 @@ const TestimonialCard = ({ data }) => {
         />
 
         {/* Text */}
-        <div className="flex flex-col gap-2 md:gap-3">
-          <h4 className="font-bold text-lg sm:text-xl md:text-2xl text-white">
-            {data.name}
-          </h4>
+        <div className="flex flex-col gap-1 md:gap-2">
+          <div>
+            <h4 className="font-bold text-lg sm:text-xl md:text-2xl text-white">
+              {data.name}
+            </h4>
+            <p className="text-sm sm:text-base text-gray-400">{data.role}</p>
+          </div>
           <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
             {data.comment}
           </p>
@@ -82,18 +90,20 @@ const TestimonialRow = ({ items, direction = "left", duration = 30 }) => {
     const el = contentRef.current;
     const totalWidth = el.scrollWidth / 2;
 
-    // Set starting position
     gsap.set(el, {
       x: direction === "left" ? 0 : -totalWidth,
     });
 
-    // Always animate in ONE direction
     gsap.to(el, {
       x: direction === "left" ? -totalWidth : 0,
       duration,
       ease: "none",
       repeat: -1,
     });
+
+    return () => {
+      gsap.killTweensOf(el);
+    };
   }, [direction, duration]);
 
   return (
@@ -112,7 +122,6 @@ const Testimonials = () => {
   const titleRef = useRef(null);
 
   useEffect(() => {
-    // Animate Title from Stroke to Solid
     gsap.fromTo(
       titleRef.current,
       {
@@ -131,6 +140,10 @@ const Testimonials = () => {
         },
       },
     );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
@@ -145,10 +158,9 @@ const Testimonials = () => {
         </h2>
       </div>
 
+      {/* Single Row of Testimonials */}
       <div className="space-y-10">
         <TestimonialRow items={testimonials} direction="left" duration={35} />
-        <TestimonialRow items={testimonials} direction="right" duration={40} />
-        <TestimonialRow items={testimonials} direction="left" duration={45} />
       </div>
     </section>
   );

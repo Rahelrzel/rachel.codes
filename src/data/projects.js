@@ -82,8 +82,7 @@ export const projects = [
     id: "03",
     title: "MIR-Hub – Medical Imaging and Research Platform",
 
-    shortDesc:
-      "A web-based medical imaging platform that improves diagnosis, collaboration, and research using AI-powered tools.",
+    shortDesc: "A web-based medical imaging platform that improves diagnosis.",
 
     longDesc:
       "MIR-Hub (Medical Imaging and Research Hub) is a web-based platform developed to support medical imaging professionals in managing, diagnosing, and collaborating on medical imaging data more efficiently. The system provides a centralized environment where professionals can access patient imaging data, write diagnostic reports, collaborate with other specialists, and utilize AI-assisted diagnostic tools. I contributed as a Frontend Developer, where I built responsive and user-friendly interfaces using React.js and integrated frontend components with backend APIs. My work focused on creating intuitive dashboards, report management interfaces, and collaborative features that improved usability and workflow efficiency for medical professionals.",
