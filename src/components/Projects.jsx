@@ -124,7 +124,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="relative bg-black text-white py-20">
+    <section id="projects" className="relative bg-black text-white py-20">
       <div className="container mx-auto px-4 pb-20">
         <h2
           ref={titleRef}

@@ -17,7 +17,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden"
+    >
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full p-4 md:p-6 px-4 md:px-8 lg:px-20 flex justify-between items-center z-50">
         <div className="text-lg md:text-xl font-bold">Rachel.codes</div>
@@ -25,16 +28,16 @@ const Hero = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 lg:space-x-8 text-base lg:text-lg font-medium">
           <li className="cursor-pointer hover:text-gray-300 transition-colors">
-            About
+            <a href="#about">About</a>
           </li>
           <li className="cursor-pointer hover:text-gray-300 transition-colors">
-            Services
+            <a href="#services">Services</a>
           </li>
           <li className="cursor-pointer hover:text-gray-300 transition-colors">
-            Projects
+            <a href="#projects">Projects</a>
           </li>
           <li className="cursor-pointer hover:text-gray-300 transition-colors">
-            Contact
+            <a href="#contact">Contact</a>
           </li>
         </ul>
 
@@ -71,16 +74,24 @@ const Hero = () => {
         >
           <ul className="flex flex-col space-y-4 p-6 text-lg font-medium">
             <li className="cursor-pointer hover:text-gray-300 transition-colors">
-              About
+              <a href="#about" onClick={() => setMobileMenuOpen(false)}>
+                About
+              </a>
             </li>
             <li className="cursor-pointer hover:text-gray-300 transition-colors">
-              Services
+              <a href="#services" onClick={() => setMobileMenuOpen(false)}>
+                Services
+              </a>
             </li>
             <li className="cursor-pointer hover:text-gray-300 transition-colors">
-              Projects
+              <a href="#projects" onClick={() => setMobileMenuOpen(false)}>
+                Projects
+              </a>
             </li>
             <li className="cursor-pointer hover:text-gray-300 transition-colors">
-              Contact
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
+                Contact
+              </a>
             </li>
           </ul>
         </div>
