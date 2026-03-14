@@ -1,12 +1,12 @@
-import p1_1 from "../assets/project1(1).webp";
-import p1_2 from "../assets/project1(2).webp";
-import p1_3 from "../assets/project1(3).webp";
-import p2_1 from "../assets/project2(1).webp";
-import p2_2 from "../assets/project2(2).webp";
-import p2_3 from "../assets/project2(3).webp";
-import p3_1 from "../assets/project3(1).webp";
-import p3_2 from "../assets/project3(2).webp";
-import p3_3 from "../assets/project3(3).webp";
+import p1_1 from "../assets/project1.png";
+import p1_2 from "../assets/project2.png";
+import p1_3 from "../assets/project3.png";
+import p2_1 from "../assets/project11.png";
+import p2_2 from "../assets/project12.png";
+import p2_3 from "../assets/project13.png";
+import p3_1 from "../assets/project21.png";
+import p3_2 from "../assets/project22.png";
+import p3_3 from "../assets/project23.png";
 
 export const projects = [
   {
