@@ -19,15 +19,15 @@ import {
   SiMongoose,
 } from "react-icons/si";
 import SectionHeader from "./SectionHeader";
-import project1 from "../assets/project1.png";
-import project12 from "../assets/project2.png";
-import project13 from "../assets/project3.png";
-import project2 from "../assets/project11.png";
-import project22 from "../assets/project12.png";
-import project23 from "../assets/project13.png";
-import project3 from "../assets/project21.png";
-import project32 from "../assets/project22.png";
-import project33 from "../assets/project23.png";
+import project1 from "../assets/project1.webp";
+import project12 from "../assets/project2.webp";
+import project13 from "../assets/project3.webp";
+import project2 from "../assets/project11.webp";
+import project22 from "../assets/project12.webp";
+import project23 from "../assets/project13.webp";
+import project3 from "../assets/project21.webp";
+import project32 from "../assets/project22.webp";
+import project33 from "../assets/project23.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
