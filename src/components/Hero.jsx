@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import memoji from "../assets/avatar.svg";
+import memoji from "../assets/rachel.webp";
 
 const Hero = () => {
   const memojiRef = useRef(null);
