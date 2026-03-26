@@ -98,7 +98,7 @@ const Hero = () => {
       </nav>
 
       <div className="flex-grow flex flex-col justify-center items-center py-20 md:py-24 px-4 md:px-8 lg:px-20">
-        <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] font-black mb-8 md:mb-10 text-center tracking-tighter">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[12rem] font-black mb-8 md:mb-10 text-center tracking-tighter">
           HI, I'M RACHEL
         </h1>
 
