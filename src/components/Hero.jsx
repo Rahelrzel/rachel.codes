@@ -23,7 +23,7 @@ const Hero = () => {
     >
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full p-4 md:p-6 px-4 md:px-8 lg:px-20 flex justify-between items-center z-50">
-        <div className="text-lg md:text-xl font-bold">Rachel.codes</div>
+        <div className="text-lg md:text-xl font-bold">Rachel.dev</div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 lg:space-x-8 text-base lg:text-lg font-medium">
